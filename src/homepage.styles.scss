@@ -1,0 +1,51 @@
+body
+{
+    height: 100%;
+    width: 100%;
+}
+
+.homePage
+{
+    width: 100%;
+}
+
+.menu-directory
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+
+    .menu-card,.menu-card1
+    {
+        display: flex;
+        border: 2px solid black;
+        margin-bottom: 30px;
+        width: 25.3%;
+        height: 270px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 15px;
+        border: 2px solid black;
+        width: 35%;
+    }
+
+    .menu-card1
+    {
+        width  : 41%;
+        height: 290px;
+    }
+
+}
+
