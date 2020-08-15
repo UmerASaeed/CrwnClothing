@@ -1,0 +1,32 @@
+.ShopItem
+{
+    display: flex;
+    justify-content: center;
+    // padding: 0px 10px;
+    width: 100%;
+    
+    .content
+    {
+        height: 100%;
+        width: 85%;
+
+        .bg-image
+        {
+            height: 90%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .footer
+        {
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name,.price
+        {
+            padding: 2%  2% ;
+        }
+    }
+}
