@@ -1,0 +1,26 @@
+.header
+{
+    display: flex;
+    justify-content: space-between;
+
+    .logo
+    {
+        padding: 50% 20%;
+    }
+
+    .options
+    {
+        display: flex;
+        align-items: center;
+
+        .shop
+        {
+            padding: 0px 30px;
+        }
+
+        .contact
+        {
+            padding-right: 35px;
+        }
+    }
+}
