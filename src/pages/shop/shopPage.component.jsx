@@ -1,8 +1,9 @@
 import React from 'react'
 import ShopCollection from '../../components/ShopCollection/shopCollection.component'
 
-const ShopPage=()=>
+const ShopPage=(props)=>
 {
+  
     return(
       <div>
         <ShopCollection/>  
