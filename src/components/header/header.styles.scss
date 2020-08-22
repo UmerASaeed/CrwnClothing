@@ -12,21 +12,26 @@
     {
         display: flex;
         align-items: center;
+        margin-right: 30px;
+        position: relative;
 
         .shop
         {
-            padding: 0px 30px;
+            padding-right: 40px;
         }
 
         .contact
         {
-            padding-right: 35px;
+            padding-right: 30px;
         }
 
         .signIn
         {
             cursor: pointer;
-            padding-right: 30px;
+            padding-right: 40px;
         }
     }
 }
+
+
+

@@ -1,0 +1,27 @@
+.cartIcon
+{
+    height: 30px;
+    width: 28px;
+    position: relative;
+    left: -5px;
+    bottom: 2px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.shoppingIcon
+{
+    height: 0px;
+    width: 10px;
+    
+}
+
+.item-count
+{
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 12px;
+}

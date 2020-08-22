@@ -5,6 +5,6 @@ import combineReducers from "./root-reducer"
 
 const middlewares = [logger];
 
-const store = createStore(combineReducers, applyMiddleware(logger))
+const store = createStore(combineReducers, applyMiddleware(...middlewares))
 
 export default store;
