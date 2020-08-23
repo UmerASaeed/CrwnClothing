@@ -1,8 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import "./shopItem.styles.scss"
+import {AddtoCart} from '../../redux/cart/cart.actions'
+import CustomButton from "../custom-button/custom-button.component"
 
-const ShopItem=({name,imageUrl,price})=>
+const ShopItem=({item,addToCart})=>
 {
+    const {name,imageUrl,price} = item; 
     return(
         <div className="ShopItem">
             <div className="content">
@@ -11,9 +15,17 @@ const ShopItem=({name,imageUrl,price})=>
                     <div className="name">{name}</div>
                     <div className="price">{"$" + price}</div> 
                </div>   
+               <CustomButton className="custom-button add-cart" onClick={()=>addToCart(item)} >Add to Cart</CustomButton>
             </div>
         </div>
     );
 }
 
-export default ShopItem;
+const mapDispatchToProps = dispatch =>
+{
+    return{
+        addToCart : item => dispatch(AddtoCart(item))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(ShopItem);
