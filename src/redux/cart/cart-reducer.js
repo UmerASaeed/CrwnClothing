@@ -17,7 +17,7 @@ const CartReducer = (state = INITIAL_STATE,action) =>
                 hidden: !state.hidden
             }
         case CartActionTypes.ADD_TO_CART:
-            return{
+            return {
                 ...state,
                 items:AddinCart(state.items,action.payload)
             }    

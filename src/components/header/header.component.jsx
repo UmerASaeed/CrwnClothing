@@ -8,24 +8,27 @@ import CartDropDown from "../cart-dropdown/cart-dropdwon.component"
 
 import "./header.styles.scss"
 
-const Header=({currentUser,hidden})=>(
-    <div className="header">
-        <Link to="/">
-            <Logo className="logo"/>
-        </Link>
-        <div className='options'>
-            <Link className = "shop" to="/shop">SHOP</Link>
-            <Link className = "contact">CONTACT</Link>
-            { currentUser ? <div className = "signIn" onClick={() => auth.signOut()}>SIGN OUT</div> : <Link className='signIn' to='/signin'>SIGN IN</Link>}
-            <CartIcon className='cart'/>
-            { !hidden ? <CartDropDown/> : null }
+const Header=({currentUser,hidden})=>
+{
+    return( 
+        <div className="header">
+                <Link to="/">
+                    <Logo className="logo"/>
+                </Link>
+                <div className='options'>
+                    <Link className = "shop" to="/shop">SHOP</Link>
+                    <Link className = "contact">CONTACT</Link>
+                    { currentUser ? <div className = "signIn" onClick={() => auth.signOut()}>SIGN OUT</div> : <Link className='signIn' to='/signin'>SIGN IN</Link>}
+                    <CartIcon className='cart'/>
+                    { !hidden ? <CartDropDown /> : null }
+                </div>
         </div>
-    </div>  
-)
+   ); 
+}
 
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser,
-    hidden:state.cart.hidden
+    hidden:state.cart.hidden,
 })
 
 export default connect(mapStateToProps)(Header);
