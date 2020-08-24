@@ -14,3 +14,19 @@ export const AddtoCart = (item) =>
         payload:item
     }
 }
+
+export const RemoveFromCart = (item) =>
+{
+    return {
+        type:CartActionTypes.REMOVE_FROM_CART,
+        payload:item
+    }
+}
+
+export const RemoveItem = (item) =>
+{
+    return{
+        type:CartActionTypes.REMOVE_ITEM,
+        payload:item
+    }
+}
