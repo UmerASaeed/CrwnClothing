@@ -11,7 +11,7 @@ const MenuCard=({title,imageUrl,size,linkUrl,history,match})=>
             backgroundImage:`url(${imageUrl})`
             }}
          ></div>
-         <div style={{backgroundColor:"black"}}></div>
+         {/* <div style={{backgroundColor:"black"}}></div> */}
             <div className="content">
                 <h2 className="title">{title.toUpperCase()}</h2>
                 <span className="subtitle">SHOP NOW</span>            
