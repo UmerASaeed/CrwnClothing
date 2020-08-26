@@ -1,0 +1,22 @@
+.collection-page
+{
+    height: 82vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+
+   .ctitle
+   {
+       display: flex;
+       justify-content: center;
+       font-size: 35px;
+   }
+   .cItems
+   {
+       display: flex;
+       align-items: center;
+       flex-wrap: wrap;
+       height: 100%;
+   }
+}

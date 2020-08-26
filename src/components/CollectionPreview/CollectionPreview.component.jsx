@@ -5,7 +5,7 @@ import "./collectionPreview.styles.scss"
 const ColletionPreview=({title,items})=>
 {
     return(
-        <div>
+        <div className="collection-preview">
             <h2 className='title'>{title.toUpperCase()}</h2>
             <div className='preview'>
                 {

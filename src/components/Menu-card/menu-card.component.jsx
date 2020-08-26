@@ -13,7 +13,7 @@ const MenuCard=({title,imageUrl,size,linkUrl,history,match})=>
          ></div>
          {/* <div style={{backgroundColor:"black"}}></div> */}
             <div className="content">
-                <h2 className="title">{title.toUpperCase()}</h2>
+                <h2 className="contentTitle">{title.toUpperCase()}</h2>
                 <span className="subtitle">SHOP NOW</span>            
             </div>
         </div>

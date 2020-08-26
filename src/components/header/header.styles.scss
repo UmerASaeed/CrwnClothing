@@ -1,18 +1,24 @@
 .header
 {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    
+    height: 18vh;  
+    font-size: 20px;
+    margin-top: -10px;
+
     .logo
     {
-        padding: 40px 40px;
+        margin-left: 50px;
+        height: 10%;
+        width: auto;   
     }
 
     .options
     {
         display: flex;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 50px;
         position: relative;
 
         .shop

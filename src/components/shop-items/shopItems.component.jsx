@@ -4,11 +4,11 @@ import "./shopItem.styles.scss"
 import {AddtoCart} from '../../redux/cart/cart.actions'
 import CustomButton from "../custom-button/custom-button.component"
 
-const ShopItem=({item,addToCart})=>
+const ShopItem=({item,addToCart,cName})=>
 {
     const {name,imageUrl,price} = item; 
     return(
-        <div className="ShopItem">
+        <div className={cName ? `${cName}`:"ShopItem"}>
             <div className="content">
                 <div className="bg-image" style={{backgroundImage:`url(${imageUrl})`}}></div>
                 <div className="footer">

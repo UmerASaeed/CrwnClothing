@@ -1,6 +1,8 @@
 body
 {
     font-family: 'Antic Slab', serif;
+    height: 100%;
+    width: 100%;
 }
 
 a{
