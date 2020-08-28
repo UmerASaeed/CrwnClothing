@@ -12,6 +12,7 @@ import CheckoutPage from "./pages/checkout/checkout.component"
 import Header from "./components/header/header.component"
 import {auth,CreateUserProfileDocument} from './firebase/firebase.utils'
 import {setCurrentUser} from './redux/user/user.action'
+ 
 
 class App extends React.Component 
 {
@@ -19,6 +20,7 @@ class App extends React.Component
 
   componentDidMount()
   {
+    
     const {setCurrentUser} =this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=>
       {
@@ -34,9 +36,9 @@ class App extends React.Component
               })
             })
         }
-        else{
-          setCurrentUser(userAuth)
-        }
+
+        setCurrentUser(userAuth)
+       
       })
   }
 
@@ -62,7 +64,7 @@ class App extends React.Component
 
 const mapStateToProps = state =>
 ({
-  currentUser:state.user.currentUser
+  currentUser:state.user.currentUser,
 })
 
 const mapDispatchToProps = dispatch =>(
