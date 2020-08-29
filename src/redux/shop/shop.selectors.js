@@ -21,3 +21,7 @@ export const selectCollectionData = memoize(collectionId =>
             return null
         }
     }))
+
+export const selectIsFetching = createSelector([selectShop],shop=>shop.isfetching)    
+
+export const isCollectionsLoaded = createSelector([selectShop], shop => !!shop.ShopData)

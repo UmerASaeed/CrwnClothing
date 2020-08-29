@@ -3,13 +3,13 @@
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 60%;
+  // padding: 0 35px 0 35px;
+  font-size:0.8vw;
   background-color: black;
   color: white;
   text-transform: uppercase;
   font-family: 'Antic Slab', serif;
-  font-weight: bolder;
+  font-weight: bold;
   border: none;
   
 
@@ -25,12 +25,13 @@
     background-color: #4285f4;
     color: white;
     width: 45%;
-    font-size: 60%;
+    font-size: 0.8vw;
     margin-right: 90px;
 
     &:hover{
       background-color: #357ae8;
       border: none;
+      color: black;
     }
   }
 
