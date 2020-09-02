@@ -21,7 +21,11 @@ const CartReducer = (state = INITIAL_STATE,action) =>
                 ...state,
                 items:AddinCart(state.items,action.payload)
             }   
-             
+        case CartActionTypes.CLEAR_CART:
+            return{
+                ...state,
+                items:[]
+            }   
         case CartActionTypes.REMOVE_FROM_CART:
             return{
                 ...state,

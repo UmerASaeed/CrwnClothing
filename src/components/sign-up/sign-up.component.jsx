@@ -3,15 +3,15 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import {auth,CreateUserProfileDocument} from "../../firebase/firebase.utils";
-
+import {connect} from "react-redux"
+import {signUpStart} from "../../redux/user/user.action"
 import './sign-up.styles.scss'
 
 class SignUp extends React.Component
 {
-    constructor()
+    constructor(props)
     {
-        super()
+        super(props)
         this.state={
             displayName:"",
             email:"",
@@ -30,31 +30,22 @@ class SignUp extends React.Component
             return;
         }
 
-        try
-        {
-            const { user } = await auth.createUserWithEmailAndPassword(email,password);
-            await CreateUserProfileDocument(user,{displayName})
+        let UserData={
+            displayName,
+            email,
+            password
+        }
 
-            this.setState({ 
-                displayName:"",
-                email:"",
-                password:"",
-                confirmPassword:""
-            })
-            
-        }
-        catch(err)
-        {
-            console.log(err)
-        }
+        this.props.signUpStart(UserData)
+
     }
 
     handleChange = event =>
     {
        const {name,value}=event.target;
-
        this.setState({[name]:value})
     }
+
     render()
     {
         const {displayName,email,password,confirmPassword}=this.state;
@@ -63,7 +54,6 @@ class SignUp extends React.Component
                 <h2 className='title'>I don't have an account</h2>
                 <span>Sign up with your email and password</span>
             
-
                 <form className='sign-up-form' onSubmit={this.handleSubmit} >
                     <FormInput type='text' name="displayName" value={displayName} onChange={this.handleChange} label="Display Name" required />
                     <FormInput type='email' name="email" value={email} onChange={this.handleChange} label="Email" required />
@@ -76,4 +66,10 @@ class SignUp extends React.Component
     }
 }
 
-export default SignUp;
+const mapDispatchToProps = dispatch =>
+{
+    return{
+        signUpStart:(UserData)=>dispatch(signUpStart(UserData))
+    }
+}
+export default connect(null,mapDispatchToProps)(SignUp);

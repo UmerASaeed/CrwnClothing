@@ -5,9 +5,9 @@ import {auth} from '../../firebase/firebase.utils'
 import CartIcon from "../cart-icon/cart-icon.component"
 import CartDropDown from "../cart-dropdown/cart-dropdwon.component"
 import {HeaderContainer,LogoContainer,OptionsContainer,LinkOptionsContainer,SignInContainer} from './header.styles'
+import {signOutStart} from "../../redux/user/user.action"
 
-
-const Header=({currentUser,hidden})=>
+const Header=({currentUser,hidden,signOutStart})=>
 {
     return( 
         <HeaderContainer>
@@ -17,7 +17,7 @@ const Header=({currentUser,hidden})=>
             <OptionsContainer>
                 <LinkOptionsContainer to="/shop">SHOP</LinkOptionsContainer>
                 <LinkOptionsContainer>CONTACT</LinkOptionsContainer>
-                { currentUser ? <SignInContainer onClick={() => auth.signOut()}>SIGN OUT</SignInContainer> : <LinkOptionsContainer to='/signin'>SIGN IN</LinkOptionsContainer>}
+                { currentUser ? <SignInContainer onClick={signOutStart}>SIGN OUT</SignInContainer> : <LinkOptionsContainer to='/signin'>SIGN IN</LinkOptionsContainer>}
                 <CartIcon/>
                 { !hidden ? <CartDropDown /> : null }
             </OptionsContainer>
@@ -30,4 +30,10 @@ const mapStateToProps = state => ({
     hidden:state.cart.hidden,
 })
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch =>{
+    return{
+        signOutStart:()=>dispatch(signOutStart())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

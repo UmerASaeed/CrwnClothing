@@ -17,7 +17,6 @@ const Config = {
 export const CreateUserProfileDocument= async (userAuth,additionData)=>
 {
     if (!userAuth) return;
-    
     const UserRef = firestore.doc(`users/${userAuth.uid}`);
     const SnapShot= await UserRef.get();    
 
@@ -79,12 +78,22 @@ export const convertCollectionSnapshotToMap = (collections) =>
     },{})
 }
 
-
+export const userPersistence = ()=>
+{
+    return new Promise((resolve,reject)=>
+    {
+        const Unsubscribe= auth.onAuthStateChanged(userAuth=>
+        {
+            Unsubscribe()
+            resolve(userAuth)    
+        },reject)
+    })
+}
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({prompt:'select_account'});
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt:'select_account'});
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
